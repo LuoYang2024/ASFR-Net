@@ -4,11 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9c9617f-029c-4561-bf19-db22ece7d554" name="更改" comment="" />
+    <list default="true" id="f9c9617f-029c-4561-bf19-db22ece7d554" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transforms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkpoints_VisNIR_HCD/best_model_D_8044.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkpoints_VisNIR_HCD/best_model_G_8044.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metric_tool.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/ASFR_Net.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Decoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Discriminator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/MobileNetV2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/SFEM.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/TFM.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/results_VisNIR_HCD_iter_40000_lr_0.0005/best_model_D.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/results_VisNIR_HCD_iter_40000_lr_0.0005/best_model_G.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/results_VisNIR_HCD_iter_40000_lr_0.0005/checkpoint.pth.tar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/results_VisNIR_HCD_iter_40000_lr_0.0005/trainValLog.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/test.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/torchutils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/train.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -24,8 +53,9 @@
     "Python.test.executor": "Run",
     "Python.train_2.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/ASFR-Net/models",
+    "last_opened_file_path": "D:/ASFR-Net",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -70,6 +100,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ASFR-Net" />
       <recent name="E:\ASFR-Net\models" />
       <recent name="$PROJECT_DIR$/models" />
     </key>
@@ -151,6 +182,7 @@
       <workItem from="1766590631378" duration="8927000" />
       <workItem from="1779193914479" duration="443000" />
       <workItem from="1779197437964" duration="165000" />
+      <workItem from="1779203668892" duration="746000" />
     </task>
     <servers />
   </component>
