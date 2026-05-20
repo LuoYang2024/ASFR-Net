@@ -1,77 +1,69 @@
-# <p align=center>`Lightweight Remote Sensing Change Detection with Progressive Aggregation and Supervised Attention (IEEE TGRS 2023)`</p>
+# <p align=center>`ASFR-Net: Adversarial Alignment and Spatio-Frequency Refinement Network for Heterogeneous Remote Sensing Image Change Detection`</p>
 
 > **Authors:**
-Zhenglai Li, Chang Tang, Xinwang Liu, Wei Zhang, Jie Dou, Lizhe Wang, Albert Zomaya
+Xin-Jie Wu, Zhi-Hui You, Si-Bao Chen, Qing-Ling Shu, Xiao Wang, Jin Tang, and Bin Luo
 
-This repository contains a simple Python implementation of our paper [A2Net](https://ieeexplore.ieee.org/abstract/document/10034814).
+This repository contains the official PyTorch implementation of our paper **ASFR-Net**.
 
-:fire: We extend A2Net for the  [semantic change detection](https://github.com/guanyuezhen/A2Net-SCD) task.<br>
-:fire: We provided the [pre-computed change maps](https://github.com/guanyuezhen/A2Net/releases/tag/v1.0) of FC-diff, FC-ef, FC-cat, STANet, L-Unet, SNUNet, DSIFN, BIT, TFI-GR, A2Net on LEVIR, BCDD, and SYSU datasets.<br>
+:fire: We construct and release a new high-resolution benchmark for heterogeneous building change detection: the **VisNIR-HCD** dataset.  
+:fire: ASFR-Net achieves state-of-the-art (SOTA) performance on VisNIR-HCD, MT-Wuhan, and XiongAn datasets with high efficiency.
 
 ### 1. Overview
 
 <p align="center">
-    <img width=500 src="assest/A2Net.jpg"/> <br />
+    <img width=800 src="figure/zhutu.pdf"/> <br />
 </p>
 
-A framework of the proposed A2Net. The temporal features are extracted from a registered pair of images by weight-shared MobileNetV2. Then, we use NAM to merge the temporal features within neighbor stages of the backbone to enhance their feature representation capability. PCIM is designed to capture the temporal change information from bi-temporal features at their corresponding feature levels. We stack SAM on each fusion of low-level and high-level features to polish the details of changed objects. Finally, a change map is obtained by gradually aggregating temporal difference features. <br>
+ASFR-Net is an end-to-end adversarial spatio-frequency refinement network. It bridges the modality gap via a **Modality-Invariant Representation Learner (MIR-Learner)**, suppresses sensor-specific noise using a **Spatio-Frequency Synergistic Enhancement Module (SFEM)**, and generates precise change maps through a decoder equipped with **Hierarchical Guided Fusion Module (HGFM)** blocks.
 
 ### 2. Usage
-+ Prepare the data:
-    - Download datasets [LEVIR](https://justchenhao.github.io/LEVIR/), [BCDD](https://study.rsgis.whu.edu.cn/pages/download/building_dataset.html), and [SYSU](https://github.com/liumency/SYSU-CD)
-    - Crop LEVIR and BCDD datasets into 256x256 patches. The pre-processed BCDD dataset can be obtained from [BCDD_256x256](https://drive.google.com/file/d/1VrdQ-rxoGVM_8ecA-ObO0u-O8rSTpSHA/view?usp=sharing).
-    - Generate list file as `ls -R ./label/* > test.txt`
-    - Prepare datasets into the following structure and set their path in `train.py` and `test.py`
++ **Prepare the dataset:**
+    - Download our **VisNIR-HCD** dataset: [Google Drive](https://drive.google.com/file/d/14iPPW7LftMqI5vis2px0PmLJqc9L9Xum/view?usp=drive_link)
+    - Organize the dataset directory as follows:
     ```
-    ├─Train
-        ├─A        ...jpg/png
-        ├─B        ...jpg/png
-        ├─label    ...jpg/png
-        └─list     ...txt
-    ├─Val
-        ├─A
-        ├─B
-        ├─label
-        └─list
-    ├─Test
-        ├─A
-        ├─B
-        ├─label
-        └─list
+    ├─VisNIR-HCD
+        ├─label       ...png (Change masks)
+        ├─list        ...txt (Train/Val/Test splits)
+        ├─NIR_A       ...png (NIR images at T1/T2)
+        ├─NIR_B       ...png
+        ├─RGB_A       ...png (Visible images at T1/T2)
+        └─RGB_B       ...png
     ```
 
-+ Prerequisites for Python:
-    - Creating a virtual environment in the terminal: `conda create -n A2Net python=3.8`
-    - Installing necessary packages: `pip install -r requirements.txt `
++ **Prerequisites:**
+    - Create a virtual environment: `conda create -n ASFRNet python=3.8`
+    - Install dependencies: `pip install -r requirements.txt`
 
-+ Train/Test
-    - `sh ./tools/train.sh`
-    - `sh ./tools/test.sh`
++ **Clone this repo:**
+    ```shell
+    git clone https://github.com/LuoYang2024/ASFR-Net.git
+    cd ASFR-Net
+    ```
+    
++ **Train/Test:**
+    - To train the model: `python ./tools/train.py`
+    - To test the model: `python ./tools/test.py`
 
 ### 3. Change Detection Results
 <p align="center">
-    <img src="assest/benchmark_results.png"/> <br />
+    <img src="figure/benchmark_results.png"/> <br />
     <em> 
-    Quantitative comparisons in terms of $\kappa$, IoU, F1, OA, Rec, and Pre on three remote sensing change detection datasets. The best and second best results are highlighted in <font color="#FF0000">red</font> and <font color="#00B0F0">blue</font>, respectively.
+    Quantitative comparisons on VisNIR-HCD, MT-Wuhan, and XiongAn datasets. ASFR-Net consistently outperforms existing SOTA methods in F1-score and IoU.
     </em>
 </p>
 
 ### 4. Acknowledgment
-This repository is built with the help of the projects [BIT_CD](https://github.com/justchenhao/BIT_CD), 
-[CDLab](https://github.com/Bobholamovic/CDLab), and [MobileSal](https://github.com/yuhuan-wu/MobileSal) for academic use only.
+This repository is built under the help of the projects  [A2Net](https://github.com/guanyuezhen/A2Net) and [RFANet](https://github.com/Youzhihui/RFANet) for academic use only.
 
 ### 5. Citation
 
-Please cite our paper if you find the work useful:
+Please cite our paper if you find this work or the dataset useful:
 
-    @article{Li_2023_A2Net,
-         author={Li, Zhenglai and Tang, Chang and Liu, Xinwang and Zhang, Wei and Dou, Jie and Wang, Lizhe and Zomaya, Albert Y.},
-        journal={IEEE Transactions on Geoscience and Remote Sensing}, 
-        title={Lightweight Remote Sensing Change Detection With Progressive Feature Aggregation and Supervised Attention}, 
-        year={2023},
-        volume={61},
-        number={},
-        pages={1-12},
-        doi={10.1109/TGRS.2023.3241436}
-        }
-
+```bibtex
+@article{Wu2026_ASFRNet,
+  title={ASFR-Net: Adversarial Alignment and Spatio-Frequency Refinement Network for Heterogeneous Remote Sensing Image Change Detection},
+  author={Wu, Xin-Jie and You, Zhi-Hui and Chen, Si-Bao and Shu, Qing-Ling and Wang, Xiao and Tang, Jin and Luo, Bin},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  year={2026},
+  doi={10.1109/TGRS.2026.xxxxxxx}
+}
