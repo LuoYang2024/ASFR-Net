@@ -52,10 +52,18 @@ ASFR-Net is an end-to-end adversarial spatio-frequency refinement network. It br
     </em>
 </p>
 
-### 4. Acknowledgment
+### 4. Checkpoints on Datasets
+
+Our trained pth on VisNIR_HCD: [Download](https://github.com/LuoYang2024/ASFR-Net/tree/main/checkpoints/VisNIR_HCD_best_model_G_8044.pth)
+
+Our trained pth on MT_Wuhan: [Download](https://github.com/LuoYang2024/ASFR-Net/tree/main/checkpoints/MT_Wuhan_best_model_G_6076.pth)
+
+Our trained pth on XiongAn: [Download](https://github.com/LuoYang2024/ASFR-Net/tree/main/checkpoints/XiongAn_best_model_G_8486.pth)
+
+### 5. Acknowledgment
 This repository is built under the help of the projects  [A2Net](https://github.com/guanyuezhen/A2Net) and [RFANet](https://github.com/Youzhihui/RFANet) for academic use only.
 
-### 5. Citation
+### 6. Citation
 
 Please cite our paper if you find this work or the dataset useful:
 
