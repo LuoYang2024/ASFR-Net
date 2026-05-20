@@ -50,7 +50,7 @@ def Validate(args):
     meter = ConfuseMatrixMeter(n_class=2)
 
     for iter_id, batched_inputs in enumerate(testLoader):
-        img, target, _, _, _ = batched_inputs
+        img, target, _ = batched_inputs
         pre_img = img[:, 0:3].cuda()
         post_img = img[:, 3:6].cuda()
 
@@ -80,8 +80,8 @@ def Validate(args):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--file_root', default=r"E:\MCD", help='Dataset path')
-    parser.add_argument('--weight', default=r'E:\ASFR-Net\tools\results_SR_iter_40000_lr_0.0005\best_model_G.pth')
+    parser.add_argument('--file_root', default=r"E:\Datasets\XiangAn\XiangAn256", help='Dataset path')
+    parser.add_argument('--weight', default=r'D:\ASFR-Net\checkpoints\XiongAn_best_model_G_8486.pth')
     parser.add_argument('--inWidth', type=int, default=256)
     parser.add_argument('--inHeight', type=int, default=256)
     args = parser.parse_args()

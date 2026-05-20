@@ -19,8 +19,8 @@ class Dataset(torch.utils.data.Dataset):
         self.dataset_type = dataset
 
         self.file_list = open(file_root + '/list/' + dataset + '.txt').read().splitlines()
-        self.pre_images = [file_root + '/RGB_A/' + x for x in self.file_list]
-        self.post_images = [file_root + '/NIR_B/' + x for x in self.file_list]
+        self.pre_images = [file_root + '/A/' + x for x in self.file_list]
+        self.post_images = [file_root + '/B/' + x for x in self.file_list]
         self.gts = [file_root + '/label/' + x for x in self.file_list]
         self.transform = transform
 
@@ -36,17 +36,12 @@ class Dataset(torch.utils.data.Dataset):
         post_image = cv2.imread(post_image_name)
         label = cv2.imread(label_name, 0)
 
-        pre_mask = label.copy()
-        post_mask = label.copy()
-
         img = numpy.concatenate((pre_image, post_image), axis=2)
 
         if self.transform:
-            # [MODIFIED] Core logic change: Handle return values based on the dataset type.
-            items = self.transform(img, label, pre_mask, post_mask)
-            return items
+            return self.transform(img, label)
 
-        return img, label, pre_mask, post_mask
+        return img, label
 
     def get_img_info(self, idx):
         img = cv2.imread(self.pre_images[idx])

@@ -45,15 +45,15 @@ class CutMixDataset(Dataset):
         self.scale_range = scale_range
 
     def __getitem__(self, index):
-        img1, target1, pre_mask1, post_mask1, flag1 = self.dataset[index]
+        img1, target1, flag1 = self.dataset[index]
         if self.beta > 0 and random.random() < self.prob:
             rand_index = random.randint(0, len(self.dataset) - 1)
-            img2, target2, _, _, _ = self.dataset[rand_index]
+            img2, target2, _ = self.dataset[rand_index]
             lam = np.random.beta(self.beta, self.beta)
             x1, y1, x2, y2 = rand_bbox(img1.size(), lam, self.scale_range)
             img1[:, x1:x2, y1:y2] = img2[:, x1:x2, y1:y2]
             target1[:, x1:x2, y1:y2] = target2[:, x1:x2, y1:y2]
-        return img1, target1, pre_mask1, post_mask1, flag1
+        return img1, target1, flag1
 
     def __len__(self):
         return len(self.dataset)
@@ -100,7 +100,7 @@ def train(args, train_loader, model_G, optimizer_G, model_D, optimizer_D, epoch,
     l_adv, l_con = improved_training_strategy(epoch)
     if not model_D: l_adv = 0.0
 
-    for iter, (img, target, _, _, flag) in enumerate(train_loader):
+    for iter, (img, target, flag) in enumerate(train_loader):
         pre_img, post_img, target_var = img[:, 0:3].cuda(), img[:, 3:6].cuda(), target.float().cuda()
         flag = flag.cuda()
         lr_G = adjust_learning_rate(args, optimizer_G, epoch, iter + cur_iter, max_batches)
@@ -160,7 +160,7 @@ def train(args, train_loader, model_G, optimizer_G, model_D, optimizer_D, epoch,
 def val(args, val_loader, model):
     model.eval()
     meter = ConfuseMatrixMeter(n_class=2)
-    for img, target, _, _, _ in val_loader:
+    for img, target, _ in val_loader:
         out1, _, _, _, _, _ = model(img[:, 0:3].cuda(), img[:, 3:6].cuda())
         pred = torch.where(out1 > 0.5, torch.ones_like(out1), torch.zeros_like(out1)).long()
         meter.update_cm(pred.cpu().numpy(), target.numpy())
@@ -179,10 +179,10 @@ def trainValidateSegmentation(args):
         args.file_root = r'E:\Datasets\LEVIR-CD-256'  # 修改为你的实际路径
     elif args.file_root == 'BCDD':
         args.file_root = r'E:\Datasets\BCDD'
-    elif args.file_root == 'SYSU':
-        args.file_root = r'E:\Datasets\SYSU'
-    elif args.file_root == 'MCD':
-        args.file_root = r'E:\MCD'
+    elif args.file_root == 'XiongAn':
+        args.file_root = r'E:\Datasets\XiangAn\XiangAn256'
+    elif args.file_root == 'MT_Wuhan':
+        args.file_root = r'E:\MT_Wuhan'
     elif args.file_root == 'VisNIR_HCD':
         args.file_root = r'E:\VisNIR_HCD'
 
@@ -281,7 +281,7 @@ def trainValidateSegmentation(args):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--file_root', default="VisNIR_HCD", help='Dataset name: LEVIR | BCDD | SYSU | MCD')
+    parser.add_argument('--file_root', default="XiongAn", help='Dataset name: LEVIR | BCDD | SYSU | MCD')
     parser.add_argument('--inWidth', type=int, default=256)
     parser.add_argument('--inHeight', type=int, default=256)
     parser.add_argument('--max_steps', type=int, default=40000)

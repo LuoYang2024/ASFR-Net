@@ -5,31 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9c9617f-029c-4561-bf19-db22ece7d554" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Transforms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkpoints_VisNIR_HCD/best_model_D_8044.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkpoints_VisNIR_HCD/best_model_G_8044.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metric_tool.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/ASFR_Net.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Decoder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Discriminator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/MobileNetV2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/SFEM.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/TFM.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/results_VisNIR_HCD_iter_40000_lr_0.0005/best_model_D.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/results_VisNIR_HCD_iter_40000_lr_0.0005/best_model_G.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/results_VisNIR_HCD_iter_40000_lr_0.0005/checkpoint.pth.tar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/results_VisNIR_HCD_iter_40000_lr_0.0005/trainValLog.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/test.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/torchutils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/train.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ASFR-Net.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ASFR-Net.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transforms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Transforms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoints_VisNIR_HCD/best_model_D_8044.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoints_VisNIR_HCD/best_model_G_8044.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/tools/test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/train.sh" beforeDir="false" afterPath="$PROJECT_DIR$/tools/train.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +36,11 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.test.executor": "Run",
+    "Python.train.executor": "Run",
     "Python.train_2.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/ASFR-Net",
     "node.js.detected.package.eslint": "true",
@@ -105,7 +92,7 @@
       <recent name="$PROJECT_DIR$/models" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.train">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="A2Net_2" />
       <option name="ENV_FILES" value="" />
@@ -129,8 +116,8 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="train_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="A2Net_2" />
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ASFR-Net" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -143,7 +130,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/train_2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/train.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -154,8 +141,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.train" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.train_2" />
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +169,7 @@
       <workItem from="1766590631378" duration="8927000" />
       <workItem from="1779193914479" duration="443000" />
       <workItem from="1779197437964" duration="165000" />
-      <workItem from="1779203668892" duration="746000" />
+      <workItem from="1779203668892" duration="3879000" />
     </task>
     <servers />
   </component>
