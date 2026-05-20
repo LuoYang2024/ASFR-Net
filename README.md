@@ -5,9 +5,6 @@ Xin-Jie Wu, Zhi-Hui You, Si-Bao Chen, Qing-Ling Shu, Xiao Wang, Jin Tang, and Bi
 
 This repository contains the official PyTorch implementation of our paper **ASFR-Net**.
 
-:fire: We construct and release a new high-resolution benchmark for heterogeneous building change detection: the **VisNIR-HCD** dataset.  
-:fire: ASFR-Net achieves state-of-the-art (SOTA) performance on VisNIR-HCD, MT-Wuhan, and XiongAn datasets with high efficiency.
-
 ### 1. Overview
 
 <p align="center">
