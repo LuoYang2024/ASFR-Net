@@ -8,7 +8,7 @@ This repository contains the official PyTorch implementation of our paper **ASFR
 ### 1. Overview
 
 <p align="center">
-    <img width=800 src="figure/zhutu.pdf"/> <br />
+    <img width=800 src="assest/Overview.png"/> <br />
 </p>
 
 ASFR-Net is an end-to-end adversarial spatio-frequency refinement network. It bridges the modality gap via a **Modality-Invariant Representation Learner (MIR-Learner)**, suppresses sensor-specific noise using a **Spatio-Frequency Synergistic Enhancement Module (SFEM)**, and generates precise change maps through a decoder equipped with **Hierarchical Guided Fusion Module (HGFM)** blocks.
@@ -43,7 +43,7 @@ ASFR-Net is an end-to-end adversarial spatio-frequency refinement network. It br
 
 ### 3. Change Detection Results
 <p align="center">
-    <img src="figure/benchmark_results.png"/> <br />
+    <img src="assest/Quantitative_comparisons.png"/> <br />
     <em> 
     Quantitative comparisons on VisNIR-HCD, MT-Wuhan, and XiongAn datasets. ASFR-Net consistently outperforms existing SOTA methods in F1-score and IoU.
     </em>
